@@ -1,16 +1,15 @@
 # Write a Python program to read a file line by line store it into a variable. 
 
-def read_file_into_variable(file_path):
-    content = ""
+def read_file_into_variable(file_path): # defination to read file
+    content = ""  # empty string to store as a variable
     try:
-        with open(file_path, 'r') as file:
+        with open(file_path, 'r') as file:  # open a file
             for line in file:
-                content += line
+                content += line  # add a line
     except FileNotFoundError:
         print("File not found!")
     return content
 
-# Example usage:
-file_path = "sample.txt"  # Replace "example.txt" with the path to your text file
+file_path = "sample.txt"  
 file_content = read_file_into_variable(file_path)
-print(file_content)
+print(file_content)  # to print the file content
