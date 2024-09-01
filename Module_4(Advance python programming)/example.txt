@@ -1,2 +1,0 @@
-Hello Word!!
-This is some additional text to append and we can extend also if we want to extend this text.
