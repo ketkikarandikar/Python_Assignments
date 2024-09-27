@@ -1,0 +1,183 @@
+
+### Basic Python Questions
+
+1. **What is Python?**
+   - **Answer:** Python is a high-level, interpreted programming language known for its readability and versatility. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming.
+
+2. **What are the key features of Python?**
+   - **Answer:** Key features include:
+     - Easy to read and write syntax
+     - Dynamic typing
+     - Extensive standard libraries
+     - Cross-platform compatibility
+     - Support for modules and packages
+
+3. **What is PEP 8?**
+   - **Answer:** PEP 8 is the Style Guide for Python Code. It provides conventions for writing clean, readable Python code, including naming conventions, indentation, and line length.
+
+### Data Structures
+
+4. **What is the difference between a list and a tuple?**
+   - **Answer:** Lists are mutable (can be changed), while tuples are immutable (cannot be changed). Lists use square brackets `[]`, and tuples use parentheses `()`.
+
+5. **How do you remove duplicates from a list?**
+   - **Answer:** You can convert the list to a set to remove duplicates and then convert it back to a list:
+     ```python
+     my_list = [1, 2, 2, 3]
+     unique_list = list(set(my_list))
+     ```
+
+### Functions and Modules
+
+6. **What is a lambda function?**
+   - **Answer:** A lambda function is an anonymous function defined with the `lambda` keyword. It can take any number of arguments but can only have one expression. For example:
+     ```python
+     add = lambda x, y: x + y
+     ```
+
+7. **How do you handle exceptions in Python?**
+   - **Answer:** You can handle exceptions using `try`, `except`, `else`, and `finally` blocks:
+     ```python
+     try:
+         # risky code
+     except SomeException:
+         # handle exception
+     else:
+         # code to execute if no exception occurs
+     finally:
+         # cleanup code
+     ```
+
+### Object-Oriented Programming
+
+8. **What are classes and objects in Python?**
+   - **Answer:** A class is a blueprint for creating objects (instances). An object is an instance of a class that can have attributes and methods defined in the class.
+
+9. **What is inheritance?**
+   - **Answer:** Inheritance allows a class (child class) to inherit attributes and methods from another class (parent class). This promotes code reusability and establishes a relationship between classes.
+
+### Advanced Topics
+
+10. **What are decorators in Python?**
+    - **Answer:** Decorators are functions that modify the behavior of another function. They are applied using the `@decorator_name` syntax above the function definition. For example:
+      ```python
+      def my_decorator(func):
+          def wrapper():
+              print("Something before the function.")
+              func()
+              print("Something after the function.")
+          return wrapper
+      ```
+
+11. **What is a generator in Python?**
+    - **Answer:** A generator is a special type of iterator that is defined using a function. It uses the `yield` statement to produce a series of values lazily, meaning it generates values on-the-fly and can maintain state between calls.
+
+### Libraries and Frameworks
+
+12. **What is NumPy?**
+    - **Answer:** NumPy is a popular library for numerical computations in Python. It provides support for arrays, matrices, and a large number of mathematical functions.
+
+13. **What is Pandas?**
+    - **Answer:** Pandas is a library for data manipulation and analysis. It provides data structures like DataFrame and Series, which make it easy to handle structured data.
+
+### Final Thoughts
+
+14. **How do you manage packages in Python?**
+    - **Answer:** Python uses package managers like `pip` to install and manage libraries. You can create a `requirements.txt` file to list dependencies for easy installation.
+
+15. **What is the purpose of `__init__.py`?**
+    - **Answer:** `__init__.py` is a special file that indicates a directory should be treated as a Python package. It can also be used to initialize package-level variables.
+
+
+### Django Questions
+
+1. **What is Django?**
+   - **Answer:** Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It follows the "batteries-included" philosophy, providing many built-in features.
+
+2. **What are Django's MTV architecture components?**
+   - **Answer:** MTV stands for Model, Template, and View:
+     - **Model:** Represents the data structure.
+     - **Template:** Manages the presentation layer.
+     - **View:** Handles business logic and interacts with the model and template.
+
+3. **How do you create a Django project?**
+   - **Answer:** You can create a new Django project using the command:
+     ```bash
+     django-admin startproject projectname
+     ```
+
+4. **What are Django models?**
+   - **Answer:** Models in Django define the structure of your data. They are Python classes that represent database tables, and Django uses them to interact with the database through an Object-Relational Mapping (ORM) system.
+
+5. **What is a Django QuerySet?**
+   - **Answer:** A QuerySet is a collection of database queries. It allows you to retrieve and manipulate data from the database using methods like `.filter()`, `.exclude()`, `.get()`, and `.all()`.
+
+6. **What are Django views?**
+   - **Answer:** Views are Python functions or classes that receive web requests and return web responses. They contain the logic that connects the models and templates.
+
+7. **What is middleware in Django?**
+   - **Answer:** Middleware is a framework of hooks into Django's request/response processing. It's a way to process requests globally before they reach the view or after the view has processed them.
+
+8. **How do you manage static files in Django?**
+   - **Answer:** Static files (CSS, JavaScript, images) are managed using the `STATIC_URL` and `STATICFILES_DIRS` settings. You can collect static files for production using:
+     ```bash
+     python manage.py collectstatic
+     ```
+
+### REST API Questions
+
+9. **What is REST?**
+   - **Answer:** REST (Representational State Transfer) is an architectural style for designing networked applications. It relies on stateless communication and uses standard HTTP methods like GET, POST, PUT, and DELETE.
+
+10. **How do you create a RESTful API using Django?**
+    - **Answer:** You can create a RESTful API using Django REST Framework (DRF), which provides tools to serialize data, handle authentication, and manage views for RESTful services.
+
+11. **What is a serializer in Django REST Framework?**
+    - **Answer:** A serializer in DRF converts complex data types, such as querysets and model instances, into native Python data types, which can then be easily rendered into JSON or XML.
+
+12. **How do you handle authentication in Django REST Framework?**
+    - **Answer:** DRF supports various authentication methods, including Token Authentication, Session Authentication, and JSON Web Tokens (JWT). You can set the default authentication classes in your settings.
+
+13. **What is the difference between APIView and ViewSet in DRF?**
+    - **Answer:** 
+      - **APIView:** A class-based view that allows you to define HTTP methods individually.
+      - **ViewSet:** A class that provides actions like list, create, retrieve, update, and delete, allowing for more concise code.
+
+14. **How do you implement pagination in a Django REST API?**
+    - **Answer:** You can implement pagination by setting up pagination classes in your DRF settings and applying them to your views or viewsets. DRF offers various pagination styles, like `PageNumberPagination` and `LimitOffsetPagination`.
+
+15. **What are the common status codes used in REST APIs?**
+    - **Answer:**
+      - **200 OK:** Successful request.
+      - **201 Created:** Resource successfully created.
+      - **204 No Content:** Successful request with no content to return.
+      - **400 Bad Request:** Invalid request.
+      - **401 Unauthorized:** Authentication required.
+      - **404 Not Found:** Resource not found.
+      - **500 Internal Server Error:** Server error.
+
+### Final Thoughts
+
+16. **What is CORS, and how can you enable it in a Django project?**
+    - **Answer:** CORS (Cross-Origin Resource Sharing) is a security feature that restricts web pages from making requests to a different domain than the one that served the web page. You can enable it in Django using the `django-cors-headers` package.
+
+17. **How can you optimize the performance of a Django application?**
+    - **Answer:** Performance can be optimized by:
+      - Using database indexing.
+      - Implementing caching (using Django's caching framework).
+      - Minimizing the use of `select_related` and `prefetch_related` where appropriate.
+      - Using pagination for large datasets.
+
+Feel free to ask if you need further details on any specific topic or additional questions!
+
+
+
+
+
+
+
+
+
+
+
+
